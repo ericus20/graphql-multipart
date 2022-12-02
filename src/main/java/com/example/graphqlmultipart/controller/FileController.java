@@ -1,5 +1,6 @@
 package com.example.graphqlmultipart.controller;
 
+import com.example.graphqlmultipart.annotation.ValidImage;
 import com.example.graphqlmultipart.response.FileUploadResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +17,8 @@ public class FileController {
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
     @MutationMapping
-    public FileUploadResult fileUpload(@Argument MultipartFile file) {
-        logger.info("Upload file: name={}", file.getOriginalFilename());
+    public FileUploadResult fileUpload(@Argument @ValidImage MultipartFile file) {
+         logger.info("Upload file: name={}", file.getOriginalFilename());
 
         return new FileUploadResult(UUID.randomUUID());
     }

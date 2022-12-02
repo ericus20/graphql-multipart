@@ -44,7 +44,7 @@ public class BASE64DecodedMultipartFile implements MultipartFile {
 
     @Override
     public String getContentType() {
-        if(getExt() == null) {
+        if (getExt() == null) {
             return null;
         }
         return MimeType.getMimeType(getExt());
@@ -61,12 +61,12 @@ public class BASE64DecodedMultipartFile implements MultipartFile {
     }
 
     @Override
-    public byte[] getBytes() throws IOException {
+    public byte[] getBytes() {
         return imgContent;
     }
 
     @Override
-    public InputStream getInputStream() throws IOException {
+    public InputStream getInputStream() {
         return new ByteArrayInputStream(imgContent);
     }
 

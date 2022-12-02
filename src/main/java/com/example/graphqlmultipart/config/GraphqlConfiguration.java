@@ -13,7 +13,7 @@ import org.springframework.web.servlet.function.RouterFunctions;
 import org.springframework.web.servlet.function.ServerResponse;
 
 import static com.example.graphqlmultipart.config.GraphqlMultipartHandler.SUPPORTED_RESPONSE_MEDIA_TYPES;
-import static org.springframework.http.MediaType.MULTIPART_FORM_DATA;
+import static org.springframework.http.MediaType.*;
 
 @Configuration
 public class GraphqlConfiguration {
@@ -53,7 +53,7 @@ public class GraphqlConfiguration {
     ) {
         String path = properties.getPath();
         RouterFunctions.Builder builder = RouterFunctions.route();
-        builder = builder.POST(path, RequestPredicates.contentType(MULTIPART_FORM_DATA)
+        builder = builder.POST(path, RequestPredicates.contentType(MULTIPART_FORM_DATA, APPLICATION_GRAPHQL, APPLICATION_JSON)
                 .and(RequestPredicates.accept(SUPPORTED_RESPONSE_MEDIA_TYPES.toArray(MediaType[]::new))), graphqlMultipartHandler::handleRequest);
         return builder.build();
     }

@@ -25,6 +25,7 @@ public class UploadCoercing implements Coercing<MultipartFile, MultipartFile> {
         if (input instanceof MultipartFile) {
             return (MultipartFile) input;
         }
+        // To support integration testing
         if (input instanceof String && isValidFile(input)) {
             var fileDto = new FileDTO((String) input);
 

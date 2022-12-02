@@ -273,9 +273,11 @@ public class MimeType {
                 put1("jpeg", MIME_IMAGE_JPEG);
                 put1("jpg", MIME_IMAGE_JPEG);
                 put1("jpe", MIME_IMAGE_JPEG);
+                put1("image/jpeg", MIME_IMAGE_JPEG);
                 put1("tiff", MIME_IMAGE_TIFF);
                 put1("tif", MIME_IMAGE_TIFF);
                 put1("png", MIME_IMAGE_PNG);
+                put1("image/png", MIME_IMAGE_PNG);
                 put1("au", MIME_AUDIO_BASIC);
                 put1("snd", MIME_AUDIO_BASIC);
                 put1("wav", MIME_AUDIO_X_WAV);

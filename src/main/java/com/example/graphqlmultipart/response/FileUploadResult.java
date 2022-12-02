@@ -1,19 +1,15 @@
 package com.example.graphqlmultipart.response;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
 import java.util.UUID;
 
+@Data
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class FileUploadResult {
-    UUID id;
-
-    public FileUploadResult(UUID id) {
-        this.id = id;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
+    @NonNull private UUID id;
 }
